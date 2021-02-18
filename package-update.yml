@@ -1,9 +1,9 @@
 schedules:
 - cron: "0 20 * * Sun,Tue,Thu"
-  displayName: 8pm Sunday, Tuesday, Thursday
+  displayName: 8pm Sunday, Tuesday, Thursday 
   branches:
     include:
-    - master
+    - main
   always: true
 
 pool:
