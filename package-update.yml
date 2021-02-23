@@ -29,8 +29,8 @@ steps:
 - script: 'git config --global user.name %git_username%' 
   displayName: 'Set git user name'
 
-- script: 'nukeeper org HelpMyStreet $(NuKeeper_github_token) --maxrepo 99 --maxpackageupdates 1 --consolidate --fork PreferSingleRepository --source https://api.nuget.org/v3/index.json --source https://pkgs.dev.azure.com/HelpMyStreet/nuget-package/_packaging/nuget.HelpMyStreet/nuget/v3/index.json --verbosity detailed'
+- script: 'nukeeper org HelpMyStreet $(NuKeeper_github_token) --includerepos */master --maxrepo 99 --maxpackageupdates 1 --consolidate --fork PreferSingleRepository --source https://api.nuget.org/v3/index.json --source https://pkgs.dev.azure.com/HelpMyStreet/nuget-package/_packaging/nuget.HelpMyStreet/nuget/v3/index.json --verbosity detailed'
   displayName: 'Run NuKeeper (All packages, min age 7 days)'
 
-- script: 'nukeeper org HelpMyStreet $(NuKeeper_github_token) --maxrepo 99 --maxpackageupdates 99 --consolidate --fork PreferSingleRepository --source https://pkgs.dev.azure.com/HelpMyStreet/nuget-package/_packaging/nuget.HelpMyStreet/nuget/v3/index.json --age 0 --verbosity detailed' 
+- script: 'nukeeper org HelpMyStreet $(NuKeeper_github_token) --includerepos */master --maxrepo 99 --maxpackageupdates 99 --consolidate --fork PreferSingleRepository --source https://pkgs.dev.azure.com/HelpMyStreet/nuget-package/_packaging/nuget.HelpMyStreet/nuget/v3/index.json --age 0 --verbosity detailed' 
   displayName: 'Run NuKeeper (HMS packages, min age 0 days)'
